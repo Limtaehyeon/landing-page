@@ -1,0 +1,324 @@
+/* Ruby Kiwi Premium Design System */
+:root {
+    --primary-red: #e63946;
+    --primary-green: #2a9d8f;
+    --accent-red: #d90429;
+    --soft-green: #e9f5f2;
+    --bg-cream: #fdfcf0;
+    --dark-text: #1d3557;
+    --light-text: #f1faee;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.7);
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --font-main: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-cream);
+    color: var(--dark-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Decorative Blobs */
+.blob {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+    animation: float 20s infinite alternate;
+}
+
+.blob-1 {
+    top: -200px;
+    left: -200px;
+}
+
+.blob-2 {
+    bottom: -200px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(42, 157, 143, 0.1) 0%, transparent 70%);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.2rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(230, 57, 70, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-red);
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-red);
+}
+
+.lang-switch {
+    background: var(--primary-red);
+    color: var(--white);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.lang-switch:hover {
+    background: var(--accent-red);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/hero.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: fadeInScale 1.2s ease-out;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    color: #ff4d6d;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--primary-red);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background: var(--white);
+    color: var(--primary-red);
+    transform: translateY(-5px);
+}
+
+/* Common Section */
+section {
+    padding: 120px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-red);
+}
+
+/* Product Section */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 4rem 3rem;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(230, 57, 70, 0.05);
+    transition: var(--transition);
+    text-align: center;
+    border: 1px solid rgba(230, 57, 70, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(230, 57, 70, 0.1);
+    border-color: var(--primary-red);
+}
+
+.product-card i {
+    font-size: 3rem;
+    color: var(--primary-red);
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.product-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: var(--dark-text);
+}
+
+.product-card p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Story Section */
+.story {
+    background: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+    border-radius: 60px;
+    margin: 0 5%;
+}
+
+.story-text h2 {
+    color: var(--white);
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+.story-text p {
+    font-size: 1.3rem;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.contact-info h3 {
+    font-size: 3rem;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+}
+
+.contact-form-wrapper {
+    background: var(--white);
+    padding: 3.5rem;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-red);
+    outline: none;
+    background: var(--soft-green);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary-red);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background: var(--accent-red);
+    transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3.5rem; }
+    .contact-container { grid-template-columns: 1fr; gap: 3rem; }
+    .story-text h2 { font-size: 2.5rem; }
+}
